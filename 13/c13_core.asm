@@ -1,8 +1,3 @@
-         ;代码清单13-2
-         ;文件名：c13_core.asm
-         ;文件说明：保护模式微型核心程序 
-         ;创建日期：2011-10-26 12:11
-
          ;以下常量定义部分。内核的大部分内容都应当固定 
          core_code_seg_sel     equ  0x38    ;内核代码段选择子
          core_data_seg_sel     equ  0x30    ;内核数据段选择子 
@@ -499,7 +494,7 @@ load_relocate_program:                      ;加载并重定位用户程序
          jnz .b4
          mov eax,[esi]                      ;若匹配，esi恰好指向其后的地址数据
          mov [es:edi-256],eax               ;将字符串改写成偏移地址 
-         mov ax,[esi+4]
+         mov ax,[esi+4] 
          mov [es:edi-252],ax                ;以及段选择子 
   .b4:
       
